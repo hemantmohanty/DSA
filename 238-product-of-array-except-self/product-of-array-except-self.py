@@ -14,3 +14,6 @@ class Solution:
             suf *= nums[i]
 
         return res
+
+
+    
