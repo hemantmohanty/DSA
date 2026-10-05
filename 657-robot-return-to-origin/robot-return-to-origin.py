@@ -1,4 +1,19 @@
 class Solution:
     def judgeCircle(self, moves: str) -> bool:
-        return sum((c=='L')-(c=='R')+(((c=='U')-(c=='D'))<<15) for c in moves)==0
-        
+        pos = [0, 0]
+
+        for ch in moves:
+
+            if (ch == 'U'):
+                pos[1] += 1
+            elif (ch == 'D'):
+                pos[1] -= 1
+            elif (ch == 'R'):
+                pos[0] += 1
+            else:
+                pos[0] -= 1
+
+        if (pos == [0, 0]):
+            return True
+        else:
+            return False
